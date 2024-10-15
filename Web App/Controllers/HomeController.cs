@@ -30,7 +30,7 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    public IActionResult Calculator(Operator? op, double? a, double? b)
+    /*public IActionResult Calculator(Operator? op, double? a, double? b)
     {
         if (a == null || b == null)
         {
@@ -73,5 +73,5 @@ public class HomeController : Controller
     public enum Operator
     {
         Add, Sub, Mult, Div
-    }
+    }*/
 }
