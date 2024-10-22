@@ -32,7 +32,7 @@
                 @entry.Value.LastName
             </td>
             <td>
-                <a class="btn btn-success">Edytuj</a>
+                <a asp-controller="Contact" asp-action="Edit" asp-route-id=@entry.Key class="btn btn-success">Edytuj</a>
                 <a asp-controller="Contact" asp-action="Details" asp-route-id=@entry.Key class="btn btn-info">Szczegóły</a>
                 <a asp-controller="Contact" asp-action="Delete" asp-route-id=@entry.Value.Id class="btn btn-danger">Usuń</a>
             </td>

@@ -13,7 +13,7 @@ namespace Web_App.Controllers
             {3, new(){Id = 3, Email = "dsdsds@gmail.com", FirstName = "Dupa", LastName = "Debil", BirthDate = new DateOnly(1920, 10, 10), PhoneNumber = "777 111 666"}}
         };
 
-        private static int currentId = 0;
+        private static int currentId = _contacts.Count;
         // Lista kontaktów 
         public ActionResult Index()
         {
@@ -50,6 +50,22 @@ namespace Web_App.Controllers
         public ActionResult Details(int id)
         {
             return View(_contacts[id]);
+        }
+        
+        public ActionResult Edit(int id)
+        {
+            return View(_contacts[id]);
+        }
+        [HttpPost]
+        public ActionResult Edit(ContactModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);   
+            }
+
+            _contacts[model.Id] = model;
+            return View("Index", _contacts);
         }
     }
 }
